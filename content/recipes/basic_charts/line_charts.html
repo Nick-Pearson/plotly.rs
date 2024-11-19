@@ -195,7 +195,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/adding_names_to_line_and_scatter_plot.html}}</p>
+<div id="adding_names_to_line_and_scatter_plot" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("adding_names_to_line_and_scatter_plot", {"data":[{"type":"scatter","name":"Scatter","mode":"markers","x":[1,2,3,4],"y":[10,15,13,17]},{"type":"scatter","name":"Lines","mode":"lines","x":[2,3,4,5],"y":[16,5,11,9]},{"type":"scatter","name":"Scatter + Lines","mode":"lines+markers","x":[1,2,3,4],"y":[12,9,15,12]}],"layout":{"title":{"text":"Adding Names to Line and Scatter Plot"}},"config":{}});
+</script>
 <h2 id="line-and-scatter-styling"><a class="header" href="#line-and-scatter-styling">Line and Scatter Styling</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -227,7 +230,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/line_and_scatter_styling.html}}</p>
+<div id="line_and_scatter_styling" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("line_and_scatter_styling", {"data":[{"type":"scatter","name":"trace1","mode":"markers","x":[1,2,3,4],"y":[10,15,13,17],"marker":{"size":12,"color":"rgb(219, 64, 82)"}},{"type":"scatter","name":"trace2","mode":"lines","x":[2,3,4,5],"y":[16,5,11,9],"line":{"width":3.0,"color":"rgb(55, 128, 191)"}},{"type":"scatter","name":"trace3","mode":"lines+markers","x":[1,2,3,4],"y":[12,9,15,12],"marker":{"size":12,"color":"rgb(128, 0, 128)"},"line":{"width":1.0,"color":"rgb(128, 0, 128)"}}],"layout":{"title":{"text":"Line and Scatter Styling"}},"config":{}});
+</script>
 <h2 id="styling-line-plot"><a class="header" href="#styling-line-plot">Styling Line Plot</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -256,7 +262,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/styling_line_plot.html}}</p>
+<div id="styling_line_plot" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("styling_line_plot", {"data":[{"type":"scatter","name":"Red","mode":"markers","x":[1,2,3,4],"y":[10,15,13,17],"line":{"width":3.0,"color":"rgb(219, 64, 82)"}},{"type":"scatter","name":"Blue","mode":"lines+markers","x":[1,2,3,4],"y":[12,9,15,12],"line":{"width":1.0,"color":"rgb(55, 128, 191)"}}],"layout":{"title":{"text":"Styling Line Plot"},"width":500,"height":500},"config":{}});
+</script>
 <h2 id="line-shape-options-for-interpolation"><a class="header" href="#line-shape-options-for-interpolation">Line Shape Options for Interpolation</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -307,7 +316,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/line_shape_options_for_interpolation.html}}</p>
+<div id="line_shape_options_for_interpolation" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("line_shape_options_for_interpolation", {"data":[{"type":"scatter","name":"linear","mode":"lines+markers","x":[1,2,3,4,5],"y":[1,3,2,3,1],"line":{"shape":"linear"}},{"type":"scatter","name":"spline","mode":"lines+markers","x":[1,2,3,4,5],"y":[6,8,7,8,6],"line":{"shape":"spline"}},{"type":"scatter","name":"vhv","mode":"lines+markers","x":[1,2,3,4,5],"y":[11,13,12,13,11],"line":{"shape":"vhv"}},{"type":"scatter","name":"hvh","mode":"lines+markers","x":[1,2,3,4,5],"y":[16,18,17,18,16],"line":{"shape":"hvh"}},{"type":"scatter","name":"vh","mode":"lines+markers","x":[1,2,3,4,5],"y":[21,23,22,23,21],"line":{"shape":"vh"}},{"type":"scatter","name":"hv","mode":"lines+markers","x":[1,2,3,4,5],"y":[26,28,27,28,26],"line":{"shape":"hv"}}],"layout":{"legend":{"font":{"size":16},"traceorder":"reversed","y":0.5}},"config":{}});
+</script>
 <h2 id="line-dash"><a class="header" href="#line-dash">Line Dash</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -361,7 +373,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/line_dash.html}}</p>
+<div id="line_dash" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("line_dash", {"data":[{"type":"scatter","name":"solid","mode":"lines+markers","x":[1,2,3,4,5],"y":[1,3,2,3,1],"line":{"dash":"solid"}},{"type":"scatter","name":"dashdot","mode":"lines+markers","x":[1,2,3,4,5],"y":[6,8,7,8,6],"line":{"dash":"dashdot"}},{"type":"scatter","name":"dash","mode":"lines+markers","x":[1,2,3,4,5],"y":[11,13,12,13,11],"line":{"dash":"dash"}},{"type":"scatter","name":"dot","mode":"lines+markers","x":[1,2,3,4,5],"y":[16,18,17,18,16],"line":{"dash":"dot"}},{"type":"scatter","name":"longdash","mode":"lines+markers","x":[1,2,3,4,5],"y":[21,23,22,23,21],"line":{"dash":"longdash"}},{"type":"scatter","name":"longdashdot","mode":"lines+markers","x":[1,2,3,4,5],"y":[26,28,27,28,26],"line":{"dash":"longdashdot"}}],"layout":{"legend":{"font":{"size":16},"traceorder":"reversed","y":0.5},"xaxis":{"autorange":false,"range":[0.95,5.05]},"yaxis":{"autorange":false,"range":[0.0,28.5]}},"config":{}});
+</script>
 <h2 id="filled-lines"><a class="header" href="#filled-lines">Filled Lines</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -463,8 +478,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/filled_lines.html}}</p>
-
+<div id="filled_lines" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("filled_lines", {"data":[{"type":"scatter","name":"Fair","showlegend":false,"x":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0],"y":[2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0,0.0],"line":{"color":"transparent"},"fill":"tozerox","fillcolor":"rgba(0, 100, 80, 0.2)"},{"type":"scatter","name":"Premium","showlegend":false,"x":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0],"y":[5.5,3.0,5.5,8.0,6.0,3.0,8.0,5.0,6.0,5.5,4.75,5.0,4.0,7.0,2.0,4.0,7.0,4.4,2.0,4.5],"line":{"color":"transparent"},"fill":"tozerox","fillcolor":"rgba(0, 176, 246, 0.2)"},{"type":"scatter","name":"Fair","showlegend":false,"x":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0],"y":[11.0,9.0,7.0,5.0,3.0,1.0,3.0,5.0,3.0,1.0,-1.0,1.0,3.0,1.0,-0.5,1.0,3.0,5.0,7.0,9.0],"line":{"color":"transparent"},"fill":"tozerox","fillcolor":"rgba(231, 107, 243, 0.2)"},{"type":"scatter","name":"Fair","x":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0],"y":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0],"line":{"color":"rgb(0, 100, 80)"}},{"type":"scatter","name":"Premium","x":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0],"y":[5.0,2.5,5.0,7.5,5.0,2.5,7.5,4.5,5.5,5.0],"line":{"color":"rgb(0, 176, 246)"}},{"type":"scatter","name":"Ideal","x":[1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0],"y":[10.0,8.0,6.0,4.0,2.0,0.0,2.0,4.0,2.0,0.0],"line":{"color":"rgb(231, 107, 243)"}}],"layout":{"paper_bgcolor":"rgb(255, 255, 255)","plot_bgcolor":"rgb(229, 229, 229)","xaxis":{"range":[1.0,10.0],"ticks":"outside","tickcolor":"rgb(127, 127, 127)","showticklabels":true,"showline":false,"showgrid":true,"gridcolor":"rgb(255, 255, 255)","zeroline":false},"yaxis":{"ticks":"outside","tickcolor":"rgb(127, 127, 127)","showticklabels":true,"showline":false,"showgrid":true,"gridcolor":"rgb(255, 255, 255)","zeroline":false}},"config":{}});
+</script>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">

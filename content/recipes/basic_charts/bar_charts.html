@@ -183,7 +183,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/basic_bar_chart.html}}</p>
+<div id="basic_bar_chart" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("basic_bar_chart", {"data":[{"type":"bar","x":["giraffes","orangutans","monkeys"],"y":[20,14,23]}],"layout":{},"config":{}});
+</script>
 <h2 id="grouped-bar-chart"><a class="header" href="#grouped-bar-chart">Grouped Bar Chart</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -207,7 +210,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/grouped_bar_chart.html}}</p>
+<div id="grouped_bar_chart" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("grouped_bar_chart", {"data":[{"type":"bar","x":["giraffes","orangutans","monkeys"],"y":[20,14,23],"name":"SF Zoo"},{"type":"bar","x":["giraffes","orangutans","monkeys"],"y":[12,18,29],"name":"LA Zoo"}],"layout":{"barmode":"group"},"config":{}});
+</script>
 <h2 id="stacked-bar-chart"><a class="header" href="#stacked-bar-chart">Stacked Bar Chart</a></h2>
 <pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -231,7 +237,10 @@ use rand_distr::{Distribution, Normal, Uniform};
     plot
 }
 <span class="boring">}</span></code></pre></pre>
-<p>{{#include ../../../../../examples/basic_charts/out/stacked_bar_chart.html}}</p>
+<div id="stacked_bar_chart" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+<script type="text/javascript">
+    Plotly.newPlot("stacked_bar_chart", {"data":[{"type":"bar","x":["giraffes","orangutans","monkeys"],"y":[20,14,23],"name":"SF Zoo"},{"type":"bar","x":["giraffes","orangutans","monkeys"],"y":[12,18,29],"name":"LA Zoo"}],"layout":{"barmode":"stack"},"config":{}});
+</script>
 
                     </main>
 
