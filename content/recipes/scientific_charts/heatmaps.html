@@ -157,7 +157,7 @@
                     <main>
                         <h1 id="heatmaps"><a class="header" href="#heatmaps">Heatmaps</a></h1>
 <p>The following imports have been used to produce the plots below:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use plotly::common::{ColorScale, ColorScalePalette, Title};
 use plotly::contour::Contours;
@@ -166,30 +166,23 @@ use std::f64::consts::PI;
 <span class="boring">}</span></code></pre></pre>
 <p>The <code>to_inline_html</code> method is used to produce the html plot displayed in this page.</p>
 <h2 id="basic-heatmap"><a class="header" href="#basic-heatmap">Basic Heatmap</a></h2>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>fn basic_heat_map(show: bool) {
+</span>fn basic_heat_map(show: bool) -&gt; Plot {
     let z = vec![vec![1, 20, 30], vec![20, 1, 60], vec![30, 60, 1]];
-    let trace = HeatMap::new_z(z);
+    let trace = HeatMap::new_z(z).zmin(1.0).zmax(60.0);
     let mut plot = Plot::new();
     plot.add_trace(trace);
+
     if show {
         plot.show();
     }
-    println!("{}", plot.to_inline_html(Some("basic_heat_map")));
+    plot
 }
 <span class="boring">}</span></code></pre></pre>
 <div id="basic_heat_map" class="plotly-graph-div" style="height:100%; width:100%;"></div>
 <script type="text/javascript">
-    window.PLOTLYENV=window.PLOTLYENV || {};
-    if (document.getElementById("basic_heat_map")) {
-        var d3 = Plotly.d3;
-        var image_element= d3.select('#image-export');
-        var trace_0 = {"type":"heatmap","x":null,"y":null,"z":[[1,20,30],[20,1,60],[30,60,1]]};
-var data = [trace_0];
-var layout = {};
-        Plotly.newPlot('basic_heat_map', data, layout, {"responsive": true});
-    };
+    Plotly.newPlot("basic_heat_map", {"data":[{"type":"heatmap","z":[[1,20,30],[20,1,60],[30,60,1]],"zmax":60.0,"zmin":1.0}],"layout":{},"config":{}});
 </script>
                     </main>
 
