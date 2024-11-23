@@ -157,7 +157,7 @@
                     <main>
                         <h1 id="multiple-axes"><a class="header" href="#multiple-axes">Multiple Axes</a></h1>
 <p>The following imports have been used to produce the plots below:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use plotly::common::{Font, AxisSide, Title};
 use plotly::layout::{Axis, GridPattern, Layout, LayoutGrid, Legend, RowOrder};
@@ -165,9 +165,9 @@ use plotly::{Plot, Rgb, Scatter};
 <span class="boring">}</span></code></pre></pre>
 <p>The <code>to_inline_html</code> method is used to produce the html plot displayed in this page.</p>
 <h2 id="two-y-axes"><a class="header" href="#two-y-axes">Two Y Axes</a></h2>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>fn two_y_axes(show: bool) {
+</span>fn two_y_axes(show: bool) -&gt; Plot {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![40, 50, 60]).name("trace1");
     let trace2 = Scatter::new(vec![2, 3, 4], vec![4, 5, 6])
         .name("trace2")
@@ -178,39 +178,31 @@ use plotly::{Plot, Rgb, Scatter};
     plot.add_trace(trace2);
 
     let layout = Layout::new()
-        .title(Title::with_text("Double Y Axis Example"))
-        .y_axis(Axis::new().title(Title::with_text("yaxis title")))
+        .title("Double Y Axis Example")
+        .y_axis(Axis::new().title("yaxis title"))
         .y_axis2(
             Axis::new()
-                .title(Title::with_text("yaxis2 title").font(Font::new().color(Rgb::new(148, 103, 189))))
+                .title(Title::from("yaxis2 title").font(Font::new().color(Rgb::new(148, 103, 189))))
                 .tick_font(Font::new().color(Rgb::new(148, 103, 189)))
                 .overlaying("y")
                 .side(AxisSide::Right),
         );
     plot.set_layout(layout);
+
     if show {
         plot.show();
     }
-    println!("{}", plot.to_inline_html(Some("two_y_axes")));
+    plot
 }
 <span class="boring">}</span></code></pre></pre>
 <div id="two_y_axes" class="plotly-graph-div" style="height:100%; width:100%;"></div>
 <script type="text/javascript">
-    window.PLOTLYENV=window.PLOTLYENV || {};
-    if (document.getElementById("two_y_axes")) {
-        var d3 = Plotly.d3;
-        var image_element= d3.select('#image-export');
-        var trace_0 = {"type":"scatter","x":[1,2,3],"y":[40,50,60],"name":"trace1"};
-var trace_1 = {"type":"scatter","x":[2,3,4],"y":[4,5,6],"name":"trace2","yaxis":"y2"};
-var data = [trace_0,trace_1];
-var layout = {"title":{"text":"Double Y Axis Example"},"yaxis":{"title":{"text":"yaxis title"}},"yaxis2":{"title":{"text":"yaxis2 title","font":{"color":"rgb(148, 103, 189)"}},"tickfont":{"color":"rgb(148, 103, 189)"},"side":"right","overlaying":"y"}};
-        Plotly.newPlot('two_y_axes', data, layout, {"responsive": true});
-    };
+    Plotly.newPlot("two_y_axes", {"data":[{"type":"scatter","name":"trace1","x":[1,2,3],"y":[40,50,60]},{"type":"scatter","name":"trace2","x":[2,3,4],"y":[4,5,6],"yaxis":"y2"}],"layout":{"title":{"text":"Double Y Axis Example"},"yaxis":{"title":{"text":"yaxis title"}},"yaxis2":{"title":{"text":"yaxis2 title","font":{"color":"rgb(148, 103, 189)"}},"tickfont":{"color":"rgb(148, 103, 189)"},"side":"right","overlaying":"y"}},"config":{}});
 </script>
 <h2 id="multiple-axes-1"><a class="header" href="#multiple-axes-1">Multiple Axes</a></h2>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+<pre><pre class="playground"><code class="language-rust no_run"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>fn multiple_axes(show: bool) {
+</span>fn multiple_axes(show: bool) -&gt; Plot {
     let trace1 = Scatter::new(vec![1, 2, 3], vec![4, 5, 6]).name("trace1");
     let trace2 = Scatter::new(vec![2, 3, 4], vec![40, 50, 60])
         .name("trace2")
@@ -225,17 +217,17 @@ var layout = {"title":{"text":"Double Y Axis Example"},"yaxis":{"title":{"text":
     plot.add_trace(trace4);
 
     let layout = Layout::new()
-        .title(Title::with_text("multiple y-axes example"))
+        .title("multiple y-axes example")
         .width(800)
         .x_axis(Axis::new().domain(&amp;[0.3, 0.7]))
         .y_axis(
             Axis::new()
-                .title(Title::with_text("yaxis title").font(Font::new().color("#1f77b4")))
+                .title(Title::from("yaxis title").font(Font::new().color("#1f77b4")))
                 .tick_font(Font::new().color("#1f77b4")),
         )
         .y_axis2(
             Axis::new()
-                .title(Title::with_text("yaxis2 title").font(Font::new().color("#ff7f0e")))
+                .title(Title::from("yaxis2 title").font(Font::new().color("#ff7f0e")))
                 .tick_font(Font::new().color("#ff7f0e"))
                 .anchor("free")
                 .overlaying("y")
@@ -244,7 +236,7 @@ var layout = {"title":{"text":"Double Y Axis Example"},"yaxis":{"title":{"text":
         )
         .y_axis3(
             Axis::new()
-                .title(Title::with_text("yaxis3 title").font(Font::new().color("#d62728")))
+                .title(Title::from("yaxis3 title").font(Font::new().color("#d62728")))
                 .tick_font(Font::new().color("#d62728"))
                 .anchor("x")
                 .overlaying("y")
@@ -252,7 +244,7 @@ var layout = {"title":{"text":"Double Y Axis Example"},"yaxis":{"title":{"text":
         )
         .y_axis4(
             Axis::new()
-                .title(Title::with_text("yaxis4 title").font(Font::new().color("#9467bd")))
+                .title(Title::from("yaxis4 title").font(Font::new().color("#9467bd")))
                 .tick_font(Font::new().color("#9467bd"))
                 .anchor("free")
                 .overlaying("y")
@@ -260,27 +252,18 @@ var layout = {"title":{"text":"Double Y Axis Example"},"yaxis":{"title":{"text":
                 .position(0.85),
         );
     plot.set_layout(layout);
+
     if show {
         plot.show();
     }
-    println!("{}", plot.to_inline_html(Some("multiple_axes")));
+    plot
 }
 <span class="boring">}</span></code></pre></pre>
 <div id="multiple_axes" class="plotly-graph-div" style="height:100%; width:100%;"></div>
 <script type="text/javascript">
-    window.PLOTLYENV=window.PLOTLYENV || {};
-    if (document.getElementById("multiple_axes")) {
-        var d3 = Plotly.d3;
-        var image_element= d3.select('#image-export');
-        var trace_0 = {"type":"scatter","x":[1,2,3],"y":[4,5,6],"name":"trace1"};
-var trace_1 = {"type":"scatter","x":[2,3,4],"y":[40,50,60],"name":"trace2","yaxis":"y2"};
-var trace_2 = {"type":"scatter","x":[4,5,6],"y":[40000,50000,60000],"yaxis":"y3"};
-var trace_3 = {"type":"scatter","x":[5,6,7],"y":[400000,500000,600000],"yaxis":"y4"};
-var data = [trace_0,trace_1,trace_2,trace_3];
-var layout = {"title":{"text":"multiple y-axes example"},"width":800,"xaxis":{"domain":[0.3,0.7]},"yaxis":{"title":{"text":"yaxis title","font":{"color":"#1F77B4"}},"tickfont":{"color":"#1F77B4"}},"yaxis2":{"title":{"text":"yaxis2 title","font":{"color":"#FF7F0E"}},"tickfont":{"color":"#FF7F0E"},"anchor":"free","side":"left","overlaying":"y","position":0.15},"yaxis3":{"title":{"text":"yaxis3 title","font":{"color":"#D62728"}},"tickfont":{"color":"#D62728"},"anchor":"x","side":"right","overlaying":"y"},"yaxis4":{"title":{"text":"yaxis4 title","font":{"color":"#9467BD"}},"tickfont":{"color":"#9467BD"},"anchor":"free","side":"right","overlaying":"y","position":0.85}};
-        Plotly.newPlot('multiple_axes', data, layout, {"responsive": true});
-    };
+    Plotly.newPlot("multiple_axes", {"data":[{"type":"scatter","name":"trace1","x":[1,2,3],"y":[4,5,6]},{"type":"scatter","name":"trace2","x":[2,3,4],"y":[40,50,60],"yaxis":"y2"},{"type":"scatter","x":[4,5,6],"y":[40000,50000,60000],"yaxis":"y3"},{"type":"scatter","x":[5,6,7],"y":[400000,500000,600000],"yaxis":"y4"}],"layout":{"title":{"text":"multiple y-axes example"},"width":800,"xaxis":{"domain":[0.3,0.7]},"yaxis":{"title":{"text":"yaxis title","font":{"color":"#1f77b4"}},"tickfont":{"color":"#1f77b4"}},"yaxis2":{"title":{"text":"yaxis2 title","font":{"color":"#ff7f0e"}},"tickfont":{"color":"#ff7f0e"},"anchor":"free","side":"left","overlaying":"y","position":0.15},"yaxis3":{"title":{"text":"yaxis3 title","font":{"color":"#d62728"}},"tickfont":{"color":"#d62728"},"anchor":"x","side":"right","overlaying":"y"},"yaxis4":{"title":{"text":"yaxis4 title","font":{"color":"#9467bd"}},"tickfont":{"color":"#9467bd"},"anchor":"free","side":"right","overlaying":"y","position":0.85}},"config":{}});
 </script>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
